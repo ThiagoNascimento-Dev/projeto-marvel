@@ -1,0 +1,6 @@
+<div *ngFor="let c of characters | async">
+    <img src="{{c.thumbnail.path}}.{{c.thumbnail.extension}}" alt="{{c.name}}">
+    <p>{{c.name}}</p>
+    <p>{{c.description}}</p>
+    <p>{{c.comics.collectionURI}}</p>
+</div>
