@@ -9,12 +9,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { CharactersListComponent } from './pages/characters-list/characters-list.component';
 import { CharacterComponent } from './pages/character/character.component';
+import { CardContentComponent } from './shared/components/card-content/card-content.component';
+import { ListContentComponent } from './shared/components/list-content/list-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CharactersListComponent,
-    CharacterComponent
+    CharacterComponent,
+    CardContentComponent,
+    ListContentComponent
   ],
   imports: [
     BrowserModule,

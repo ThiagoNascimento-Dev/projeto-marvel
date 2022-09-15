@@ -1,3 +1,50 @@
-<p *ngFor="let c of allCharacters | async">
-    <img src="{{c.thumbnail.path}}.{{c.thumbnail.extension}}" alt="{{c.name}}" (click)="showCharacter(c.id)">
-</p>
+<div class="teste bg-marvel">
+    <div class="image">
+        <div class="title">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, ipsa reiciendis ab officiis veritatis aspernatur cupiditate nulla omnis accusamus itaque, incidunt nostrum dicta, nemo quod quia nisi eius ea tenetur.
+        </div>
+        <div class="foto">
+            <img src="./assets/image/image-scroll.png" alt="">
+        </div>
+    </div>
+    <div class="content">
+        <div class="action-bar">
+            <div class="search">
+                <input type="text" id="field-search" placeholder="procure seu personagem"><!-- #c (input)="search(c.value)"-->
+                <label for="field-search">
+                    <img src="./assets/icons/i-search.svg" alt="icon-searchsearch">
+                </label>
+            </div>
+            <div class="layout-view">
+                <a class="selector-view" (click)="change('card')">
+                    <img src="./assets/icons/i-grid.svg" alt="icon-grid">
+                </a>
+                <a class="selector-view" (click)="change('list')">
+                    <img src="./assets/icons/i-list.svg" alt="icon-list">
+                </a>
+            </div>
+        </div>
+        <div class="filter-bar">
+            <select name="" id="">
+                <option value="">teste</option>
+                <option value="">teste1</option>
+                <option value="">teste2</option>
+                <option value="">teste3</option>
+            </select>
+            <select name="" id="">
+                <option value="">teste</option>
+                <option value="">teste1</option>
+                <option value="">teste2</option>
+                <option value="">teste3</option>
+            </select>
+        </div>
+        <app-card-content
+        [infoContent]="allCharacters"
+        *ngIf="changeView"
+        ></app-card-content>
+        <app-list-content
+        [infoContent]="allCharacters"
+        *ngIf="!changeView"
+        ></app-list-content>
+    </div>
+</div>

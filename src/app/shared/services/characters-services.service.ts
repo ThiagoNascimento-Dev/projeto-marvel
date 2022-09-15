@@ -11,7 +11,7 @@ export class CharactersServicesService {
   publicKey = '5a237863b3cc2061003cbbc4fe20dc06';
   hash = '9e89b4721902adea15e7f2d491879a2b';
   characterId = '';
-  urlApi = `http://gateway.marvel.com/v1/public/characters?ts=1663110861&apikey=${this.publicKey}&hash=${this.hash}&limit=100`;
+  urlApi = `http://gateway.marvel.com/v1/public/characters?ts=1663110861&apikey=${this.publicKey}&hash=${this.hash}&limit=15`;
 
   constructor( private http:HttpClient ) { }
 

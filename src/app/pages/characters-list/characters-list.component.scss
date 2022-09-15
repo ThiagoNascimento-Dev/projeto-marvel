@@ -1,3 +1,86 @@
 @import 'helpers';
 @import 'variables';
 @import 'components';
+
+.teste {
+    padding: 3%;
+    color: $color-1;
+    .image {
+        display: flex;
+        align-items: center;
+        border: 1px solid red;
+        .title {
+            width: 50%;
+            font-family: 'Anton-Regular';
+        }
+        .foto {
+            width: 50%;
+            img { width: 100%; }
+        }
+    }
+
+    .content {
+        
+        .action-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 3% 0;
+            .search {
+                position: relative;
+                width: 50%;
+                display: flex;
+                align-items: center;
+                input {
+                    width: 100%;
+                    font-size: 1.5em;
+                    color: white;
+                    background-color: transparent;
+                    padding: 2%;
+                    border: 1px solid $color-1;
+                    border-radius: 5px;
+                }
+                label {
+                    position: absolute;
+                    right: 2%;
+                    img { width: 75%; }
+                }
+            }
+            .layout-view {
+                width: 20%;
+                display: flex;
+                justify-content: flex-end;
+                gap: 5%;
+                .selector-view {
+                    padding: 3%;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    img {
+                        width: 40px;
+                    }
+                    &:hover {
+                        background-color: #414141;
+                    }
+                    &.active {
+                        background-color: red;
+                    }
+                }
+            }
+        }
+        .filter-bar {
+            display: flex;
+            // align-items: center;
+            // justify-content: space-between;
+            margin: 3% 0;
+            gap: 3%;
+            select {
+                font-size: 1.5em;
+                color: white;
+                background-color: transparent;
+                padding: 0.8% 2%;
+                border: 1px solid $color-1;
+                border-radius: 5px;
+            }
+        }
+    }
+}

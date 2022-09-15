@@ -1,0 +1,9 @@
+<div class="content-model">
+    <div class="list-content" *ngFor="let c of infoContent | async">
+        <img src="{{c.thumbnail.path}}.{{c.thumbnail.extension}}" alt="{{c.name}}">
+        <div class="name">
+            {{c.name}}
+            <button (click)="showCharacter(c.id)">asd</button>
+        </div>
+    </div>
+</div>
