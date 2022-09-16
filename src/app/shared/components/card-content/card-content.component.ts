@@ -14,12 +14,26 @@ export class CardContentComponent implements OnInit {
 
   @Input() infoContent: any = [];
 
+  hoverId: any;
+  hoverCard: boolean = false;
+
   ngOnInit(): void {
+    console.log(this.infoContent);
   }
 
   showCharacter(id: any) {
     console.log('id:', id);
     this.router.navigate(['/character/'+id]);
+  }
+
+  public hoverEnabled(id: any) {
+    this.hoverId = id;
+    this.hoverCard = true;
+  }
+
+  public hoverDisabled(id: any) {
+    this.hoverId = id;
+    this.hoverCard = false;
   }
 
 }

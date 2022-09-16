@@ -1,8 +1,14 @@
-body {
-    font-size: 1em;
-    // desktop HD
-    @media only screen and (min-width: 992px) and (max-width: 1440px) { font-size: 5em; }
-}
 .bg-marvel {
     background-color: $color-3;
+    @include media-breakpoint-down(sm) { min-height: 100vh; }
+}
+.btn-marvel {
+    font-family: 'Anton-Regular';
+    font-size: 1em;
+    padding: 1% 2%;
+    border-radius: 0 1.25rem;
+    &:hover {
+        color: $color-1;
+        background-color: $color-4;
+    }
 }

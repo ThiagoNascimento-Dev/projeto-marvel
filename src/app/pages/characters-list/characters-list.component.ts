@@ -14,8 +14,8 @@ export class CharactersListComponent implements OnInit {
     public router: Router
   ) { }
 
-  allCharacters: any = [];
-  allCharactersList: any = [];
+  allCharacters: any [] = [];
+  allCharactersList: any [] = [];
   changeView: boolean = false;
   buscaTotal = -1;
   newTotal = 27;
@@ -25,9 +25,11 @@ export class CharactersListComponent implements OnInit {
     this.change('card');
   }
 
-  getService() {
-    this.allCharactersList = this.cService.getAllCharacters();
-    this.allCharacters = this.allCharactersList;
+  async getService() {
+    await this.cService.getAllCharacters().subscribe(response => {
+      this.allCharactersList = response;
+      this.allCharacters = this.allCharactersList;
+    });
   }
 
   showCharacter(id: any) {
@@ -50,19 +52,19 @@ export class CharactersListComponent implements OnInit {
     }
   }
 
-  // public search(c:string) {
-  //   console.log(c);
-  //   c = c ? c.trim():'';
-  //   this.allCharacters = this.allCharactersList.filter((ca: any) => ca.name.toLowerCase().includes(c.toLowerCase()));
-  //   this.newTotal = this.allCharacters.length;
-  //   console.log(this.newTotal);
+  public search(c:string) {
+    console.log(c);
+    c = c ? c.trim():'';
+    this.allCharacters = this.allCharactersList.filter(ca => ca.name.toLowerCase().includes(c.toLowerCase()));
+    this.newTotal = this.allCharacters.length;
+    console.log(this.newTotal);
 
-  //   if (this.buscaTotal !== this.newTotal) {
-  //     this.buscaTotal = this.newTotal;
-  //   } else if (!c) {
-  //     this.buscaTotal = -1;
-  //   }
-  // }
+    if (this.buscaTotal !== this.newTotal) {
+      this.buscaTotal = this.newTotal;
+    } else if (!c) {
+      this.buscaTotal = -1;
+    }
+  }
 
 
 }

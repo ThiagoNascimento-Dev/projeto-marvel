@@ -2,48 +2,68 @@
 @import 'variables';
 @import 'components';
 
-.teste {
+.container-page {
     padding: 3%;
     color: $color-1;
+    @media only screen and (min-width: 992px) and (max-width: 1440px) { font-size: 0.72em; }
+    @include media-breakpoint-down(sm) { font-size: 0.52em; }
     .image {
         display: flex;
         align-items: center;
-        border: 1px solid red;
+        @include media-breakpoint-down(lg) { flex-direction: column; }
         .title {
             width: 50%;
             font-family: 'Anton-Regular';
+            font-size: 2.5em;
+            line-height: 3rem;
+            padding: 6%;
+            @include media-breakpoint-down(lg) { width: 100%; }
+            @include media-breakpoint-down(sm) { line-height: 2rem; }
+            span { color: $color-4; }
+            img {
+                width: 100%;
+                margin-bottom: 5%;
+            }
         }
         .foto {
             width: 50%;
+            @include media-breakpoint-down(lg) { width: 100%; }
             img { width: 100%; }
         }
     }
-
     .content {
-        
         .action-bar {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin: 3% 0;
+            @include media-breakpoint-down(lg) { margin: 3% 0 5%; }
             .search {
                 position: relative;
                 width: 50%;
                 display: flex;
                 align-items: center;
+                @include media-breakpoint-down(lg) { width: 75%; }
+                @include media-breakpoint-down(sm) { width: 70%; }
                 input {
                     width: 100%;
                     font-size: 1.5em;
-                    color: white;
+                    color: $color-1;
                     background-color: transparent;
                     padding: 2%;
-                    border: 1px solid $color-1;
+                    border: 0.0625rem solid $color-1;
                     border-radius: 5px;
                 }
                 label {
                     position: absolute;
                     right: 2%;
-                    img { width: 75%; }
+                    @media only screen and (min-width: 992px) and (max-width: 1440px) { right: 0; }
+                    @include media-breakpoint-down(sm) { right: -5%; }
+                    img {
+                        width: 75%;
+                        @media only screen and (min-width: 992px) and (max-width: 1440px) { width: 60% }
+                        @include media-breakpoint-down(sm) { width: 50%; }
+                    }
                 }
             }
             .layout-view {
@@ -53,33 +73,29 @@
                 gap: 5%;
                 .selector-view {
                     padding: 3%;
-                    border-radius: 5px;
+                    border-radius: 0.3125rem;
                     cursor: pointer;
                     img {
-                        width: 40px;
+                        width: 2.5rem;
+                        @media only screen and (min-width: 992px) and (max-width: 1440px) { width: 1.5rem; }
+                        @include media-breakpoint-down(sm) { width: 1.5rem; }
                     }
-                    &:hover {
-                        background-color: #414141;
-                    }
-                    &.active {
-                        background-color: red;
-                    }
+                    &:hover { background-color: $color-5; }
+                    &.active { background-color: $color-4; }
                 }
             }
         }
         .filter-bar {
             display: flex;
-            // align-items: center;
-            // justify-content: space-between;
             margin: 3% 0;
             gap: 3%;
             select {
                 font-size: 1.5em;
-                color: white;
+                color: $color-1;
                 background-color: transparent;
                 padding: 0.8% 2%;
-                border: 1px solid $color-1;
-                border-radius: 5px;
+                border: 0.0625rem solid $color-1;
+                border-radius: 0.3125rem;
             }
         }
     }

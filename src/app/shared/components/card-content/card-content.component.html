@@ -1,6 +1,9 @@
 <div class="content-model">
-    <div class="card-content" *ngFor="let c of infoContent | async" (click)="showCharacter(c.id)">
+    <div class="card-content" *ngFor="let c of infoContent" (mouseenter)="hoverEnabled(c.id)">
         <img src="{{c.thumbnail.path}}.{{c.thumbnail.extension}}" alt="{{c.name}}">
+        <div class="hover-card" *ngIf="hoverCard && c.id === this.hoverId" (mouseleave)="hoverDisabled(c.id)">
+            <button class="btn-marvel" (click)="showCharacter(c.id)">More details</button>
+        </div>
         <div class="name">
             {{c.name}}
         </div>
