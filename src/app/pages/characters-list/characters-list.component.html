@@ -11,7 +11,7 @@
     <div class="content">
         <div class="action-bar">
             <div class="search">
-                <input type="text" id="field-search" placeholder="procure seu personagem" #c (input)="search(c.value)">
+                <input type="text" id="field-search" placeholder="look for your character" #c (input)="search(c.value)">
                 <label for="field-search">
                     <img src="./assets/icons/i-search.svg" alt="icon-searchsearch">
                 </label>
@@ -25,21 +25,7 @@
                 </a>
             </div>
         </div>
-        <!-- <div class="filter-bar">
-            <select name="" id="">
-                <option value="">teste</option>
-                <option value="">teste1</option>
-                <option value="">teste2</option>
-                <option value="">teste3</option>
-            </select>
-            <select name="" id="">
-                <option value="">teste</option>
-                <option value="">teste1</option>
-                <option value="">teste2</option>
-                <option value="">teste3</option>
-            </select>
-        </div> -->
-        <app-card-content [infoContent]="allCharacters" *ngIf="changeView"></app-card-content>
+        <app-card-content [infoContent]="allCharacters" [hasHover]="true" *ngIf="changeView"></app-card-content>
         <app-list-content [infoContent]="allCharacters" *ngIf="!changeView"></app-list-content>
     </div>
 </div>

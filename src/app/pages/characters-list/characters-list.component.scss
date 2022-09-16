@@ -52,7 +52,7 @@
                     background-color: transparent;
                     padding: 2%;
                     border: 0.0625rem solid $color-1;
-                    border-radius: 5px;
+                    border-radius: 0.3125rem;
                 }
                 label {
                     position: absolute;
@@ -83,19 +83,6 @@
                     &:hover { background-color: $color-5; }
                     &.active { background-color: $color-4; }
                 }
-            }
-        }
-        .filter-bar {
-            display: flex;
-            margin: 3% 0;
-            gap: 3%;
-            select {
-                font-size: 1.5em;
-                color: $color-1;
-                background-color: transparent;
-                padding: 0.8% 2%;
-                border: 0.0625rem solid $color-1;
-                border-radius: 0.3125rem;
             }
         }
     }

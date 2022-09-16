@@ -1,0 +1,19 @@
+@import 'helpers';
+@import 'variables';
+@import 'components';
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
+    background-color: $color-3;
+    color: $color-1;
+    border-top: 0.0625rem solid $color-4;
+    padding: 1% 0;
+    @include media-breakpoint-down(lg) { padding: 3% 0; }
+    img {
+        width: 80%;
+        @include media-breakpoint-down(sm) { width: 60%; }
+    }
+}

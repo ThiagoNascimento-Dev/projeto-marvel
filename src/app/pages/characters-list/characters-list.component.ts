@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatPseudoCheckbox } from '@angular/material/core';
 import { Router } from '@angular/router';
 import { CharactersServicesService } from 'src/app/shared/services/characters-services.service';
 
@@ -30,6 +31,7 @@ export class CharactersListComponent implements OnInit {
       this.allCharactersList = response;
       this.allCharacters = this.allCharactersList;
     });
+    
   }
 
   showCharacter(id: any) {
@@ -65,6 +67,5 @@ export class CharactersListComponent implements OnInit {
       this.buscaTotal = -1;
     }
   }
-
 
 }

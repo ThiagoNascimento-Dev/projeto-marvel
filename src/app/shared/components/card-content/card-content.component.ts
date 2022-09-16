@@ -13,6 +13,7 @@ export class CardContentComponent implements OnInit {
   ) { }
 
   @Input() infoContent: any = [];
+  @Input() hasHover: any;
 
   hoverId: any;
   hoverCard: boolean = false;

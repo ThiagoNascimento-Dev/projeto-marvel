@@ -1,6 +1,43 @@
-<div *ngFor="let c of characters | async">
-    <img src="{{c.thumbnail.path}}.{{c.thumbnail.extension}}" alt="{{c.name}}">
-    <p>{{c.name}}</p>
-    <p>{{c.description}}</p>
-    <p>{{c.comics.collectionURI}}</p>
+<div class="character-page bg-marvel">
+    <div class="btn-back">
+        <a class="btn-marvel back" href="/characters-list">
+            Back
+        </a>
+    </div>
+    <div class="character-view" *ngFor="let c of characters">
+        <div class="character-image">
+            <img src="{{c.thumbnail.path}}.{{c.thumbnail.extension}}" alt="{{c.name}}">
+        </div>
+        <div class="character-details">
+            <div class="name">
+                {{c.name}}
+            </div>
+            <div class="description">
+                {{c.description}}
+            </div>
+            <div class="links">
+                <a class="btn-marvel" *ngIf="url[0] !== ''" href="{{url[0]}}" target="blanc">
+                    Details
+                </a>
+                <a class="btn-marvel" *ngIf="url[1] !== ''" href="{{url[1]}}" target="blanc">
+                    Wiki
+                </a>
+                <a class="btn-marvel" *ngIf="url[2] !== ''" href="{{url[2]}}" target="blanc">
+                    ComicLink
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="complement">
+        <div class="title">
+            Comics
+        </div>
+        <app-card-content [infoContent]="comics" [hasHover]="false"></app-card-content>
+    </div>
+    <div class="complement">
+        <div class="title">
+            Series
+        </div>
+        <app-card-content [infoContent]="series" [hasHover]="false"></app-card-content>
+    </div>
 </div>

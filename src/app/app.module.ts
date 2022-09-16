@@ -11,6 +11,7 @@ import { CharactersListComponent } from './pages/characters-list/characters-list
 import { CharacterComponent } from './pages/character/character.component';
 import { CardContentComponent } from './shared/components/card-content/card-content.component';
 import { ListContentComponent } from './shared/components/list-content/list-content.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ListContentComponent } from './shared/components/list-content/list-cont
     CharactersListComponent,
     CharacterComponent,
     CardContentComponent,
-    ListContentComponent
+    ListContentComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
