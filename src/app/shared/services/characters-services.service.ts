@@ -18,7 +18,7 @@ export class CharactersServicesService {
 
   timeStamp ='1663352659';
   characterId = '';
-  urlApi = `http://gateway.marvel.com/v1/public/characters?ts=${this.timeStamp}&apikey=${this.publicKey}&hash=${this.hash}&limit=15`;
+  urlApi = `https://gateway.marvel.com/v1/public/characters?ts=${this.timeStamp}&apikey=${this.publicKey}&hash=${this.hash}&limit=15`;
 
   constructor( private http:HttpClient ) { }
 
@@ -29,7 +29,7 @@ export class CharactersServicesService {
 
   getCharacterSpecific(characterId: any): Observable<any> {
     this.characterId = characterId;
-    return this.http.get<any>(`http://gateway.marvel.com/v1/public/characters/${this.characterId}?ts=${this.timeStamp}&apikey=${this.publicKey}&hash=${this.hash}`)
+    return this.http.get<any>(`https://gateway.marvel.com/v1/public/characters/${this.characterId}?ts=${this.timeStamp}&apikey=${this.publicKey}&hash=${this.hash}`)
     .pipe(map((data: any) => data.data.results))
   }
 
